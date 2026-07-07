@@ -182,68 +182,115 @@
     p, li{font-size:15px;}
     .callout{padding:14px 16px; font-size:14px;}
   }
+
+  /* Language switcher */
+  .lang-box{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:10px;
+    margin:0 0 28px;
+    font-family:'Courier New',ui-monospace,monospace;
+  }
+  .lang-box label{
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .lang-box select{
+    font-family:inherit;
+    font-size:13.5px;
+    color:var(--ink);
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:7px 10px;
+    cursor:pointer;
+  }
+  .lang-box select:focus{outline:2px solid var(--accent); outline-offset:1px;}
+
+  html[dir="rtl"] .intro{border-left:none; border-right:2px solid var(--accent); padding-left:0; padding-right:18px;}
+  html[dir="rtl"] nav.toc ol{padding-left:0; padding-right:20px;}
+  html[dir="rtl"] ul{padding-left:0; padding-right:22px;}
+  html[dir="rtl"] .lang-box{justify-content:flex-start;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
+  <div class="lang-box">
+    <label for="lang-select" data-i18n="langLabel">Language</label>
+    <select id="lang-select" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="zh">中文（简体）</option>
+      <option value="ar">العربية</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
   <header class="hero">
-    <p class="eyebrow">Numora Calc · Blue Acid Labs</p>
-    <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective Date: July 6, 2026</p>
-    <p class="intro">This Privacy Policy explains how Blue Acid Labs collects, uses, and protects information when you use the Numora Calc mobile and web application. We are committed to protecting user privacy and ensuring transparent handling of all local and account data.</p>
+    <p class="eyebrow" data-i18n="eyebrow">Numora Calc · Blue Acid Labs</p>
+    <h1 data-i18n="h1">Privacy Policy</h1>
+    <p class="effective-date" data-i18n="effectiveDate">Effective Date: July 6, 2026</p>
+    <p class="intro" data-i18n="intro">This Privacy Policy explains how Blue Acid Labs collects, uses, and protects information when you use the Numora Calc mobile and web application. We are committed to protecting user privacy and ensuring transparent handling of all local and account data.</p>
   </header>
 
   <nav class="toc" aria-label="Table of contents">
-    <p>On this page</p>
+    <p data-i18n="tocLabel">On this page</p>
     <ol>
-      <li><a href="#overview">Overview of Application Functions</a></li>
-      <li><a href="#information">Information We Collect and How We Handle It</a></li>
-      <li><a href="#health">Menstrual Cycle &amp; Health-Related Estimations</a></li>
-      <li><a href="#permissions">Application Permissions and System Access</a></li>
-      <li><a href="#third-party">Third-Party Services</a></li>
-      <li><a href="#children">Children's Privacy</a></li>
-      <li><a href="#security">Data Storage, Security &amp; Deletion Rights</a></li>
-      <li><a href="#changes">Changes to This Privacy Policy</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#overview" data-i18n="toc1">Overview of Application Functions</a></li>
+      <li><a href="#information" data-i18n="toc2">Information We Collect and How We Handle It</a></li>
+      <li><a href="#health" data-i18n="toc3">Menstrual Cycle &amp; Health-Related Estimations</a></li>
+      <li><a href="#permissions" data-i18n="toc4">Application Permissions and System Access</a></li>
+      <li><a href="#third-party" data-i18n="toc5">Third-Party Services</a></li>
+      <li><a href="#children" data-i18n="toc6">Children's Privacy</a></li>
+      <li><a href="#security" data-i18n="toc7">Data Storage, Security &amp; Deletion Rights</a></li>
+      <li><a href="#changes" data-i18n="toc8">Changes to This Privacy Policy</a></li>
+      <li><a href="#contact" data-i18n="toc9">Contact Us</a></li>
     </ol>
   </nav>
 
   <section id="overview">
-    <h2><span class="num">01</span>Overview of Application Functions</h2>
-    <p>Numora Calc is a multifunctional toolkit designed to provide standard calculators, specialty calculation modules (including Age Calculator, Unit Converter, and Discount calculators), real-time Currency Conversion tools, a local Notes Manager (Sticky Logs), and Menstrual Cycle tracking &amp; prediction tools.</p>
+    <h2><span class="num">01</span><span data-i18n="h2-01">Overview of Application Functions</span></h2>
+    <p data-i18n="p-01">Numora Calc is a multifunctional toolkit designed to provide standard calculators, specialty calculation modules (including Age Calculator, Unit Converter, and Discount calculators), real-time Currency Conversion tools, a local Notes Manager (Sticky Logs), and Menstrual Cycle tracking &amp; prediction tools.</p>
   </section>
 
   <section id="information">
-    <h2><span class="num">02</span>Information We Collect and How We Handle It</h2>
-    <p>To support these utilities, Numora Calc is structured to run primarily offline, using sandboxed local storage on your device. We prioritize data minimization and do not run continuous tracking scripts or background telemetry.</p>
+    <h2><span class="num">02</span><span data-i18n="h2-02">Information We Collect and How We Handle It</span></h2>
+    <p data-i18n="p-02">To support these utilities, Numora Calc is structured to run primarily offline, using sandboxed local storage on your device. We prioritize data minimization and do not run continuous tracking scripts or background telemetry.</p>
 
-    <h3>A. User-Authored Content &amp; Tool Calculations (Stored Locally Only)</h3>
-    <p>Users may voluntarily enter data into our specialized calculating modules. This includes:</p>
-    <ul>
+    <h3 data-i18n="h3-a">A. User-Authored Content &amp; Tool Calculations (Stored Locally Only)</h3>
+    <p data-i18n="p-a">Users may voluntarily enter data into our specialized calculating modules. This includes:</p>
+    <ul data-i18n-html="ul-a">
       <li>Numerical entries, equations, birthdates, and discount percentages.</li>
       <li>Custom text notes, Sticky Pad entries, and calculation logs.</li>
       <li>Menstrual Cycle &amp; Health Tracking Parameters: last period start dates, cycle lengths, period durations, and customized cycle logs.</li>
     </ul>
-    <div class="callout"><strong>Storage commitment:</strong> All calculation inputs, notes, and cycle parameters are saved exclusively on your device within the app's sandboxed environment (client-side local storage). This sensitive information is never automatically synchronized to external servers, sold, or shared with third parties by Blue Acid Labs.</div>
+    <div class="callout" data-i18n-html="callout-a"><strong>Storage commitment:</strong> All calculation inputs, notes, and cycle parameters are saved exclusively on your device within the app's sandboxed environment (client-side local storage). This sensitive information is never automatically synchronized to external servers, sold, or shared with third parties by Blue Acid Labs.</div>
 
-    <h3>B. License Registration &amp; Verification Data (Account Information)</h3>
-    <p>To access and verify your perpetual standard platform license, we collect minimal operational info during sign-up:</p>
-    <ul>
+    <h3 data-i18n="h3-b">B. License Registration &amp; Verification Data (Account Information)</h3>
+    <p data-i18n="p-b">To access and verify your perpetual standard platform license, we collect minimal operational info during sign-up:</p>
+    <ul data-i18n-html="ul-b">
       <li><strong>Email address</strong> — used solely for license binding, service communication, and activation checks.</li>
       <li><strong>Country selection</strong> — collected to adapt default currency formats and comply with regional tax guidelines.</li>
       <li><strong>Billing details</strong> — handled exclusively by our secure third-party payment gateway. Blue Acid Labs does not store or process your credit card numbers or raw bank credentials.</li>
     </ul>
 
-    <h3>C. Network Connection Data</h3>
-    <ul>
+    <h3 data-i18n="h3-c">C. Network Connection Data</h3>
+    <ul data-i18n-html="ul-c">
       <li><strong>Live exchange rates</strong> — when you launch the Currency Converter module, the app sends a secure, non-identifying API request to retrieve live exchange rates. No personal information or browser-identifying metadata is transmitted with this request.</li>
       <li><strong>License checks</strong> — a simple online validation verifies your standard account status.</li>
     </ul>
 
-    <h3>D. Diagnostics &amp; Performance Analytics</h3>
-    <p>To ensure stability, eliminate app crashes, and deliver performance optimizations, we may gather anonymous device statistics:</p>
-    <ul>
+    <h3 data-i18n="h3-d">D. Diagnostics &amp; Performance Analytics</h3>
+    <p data-i18n="p-d">To ensure stability, eliminate app crashes, and deliver performance optimizations, we may gather anonymous device statistics:</p>
+    <ul data-i18n-html="ul-d">
       <li>Operating system version (e.g., Android, iOS).</li>
       <li>Device model configuration.</li>
       <li>Anonymous diagnostic logs and crash reports.</li>
@@ -251,17 +298,17 @@
   </section>
 
   <section id="health">
-    <h2><span class="num">03</span>Menstrual Cycle &amp; Health-Related Estimations</h2>
-    <ul>
+    <h2><span class="num">03</span><span data-i18n="h2-03">Menstrual Cycle &amp; Health-Related Estimations</span></h2>
+    <ul data-i18n-html="ul-health">
       <li><strong>Informational estimations only:</strong> calculations in the Menstrual Cycle module (including next period forecasts, ovulation predictions, and fertile window estimations) are generated via client-side algorithms based solely on your user-inputted cycle length.</li>
       <li><strong>No medical reliance:</strong> this module is provided for self-organization and personal informational purposes only. It should not be treated as a form of contraception, medical diagnosis, or healthcare advice. Consult a qualified medical practitioner for all medical needs.</li>
     </ul>
   </section>
 
   <section id="permissions">
-    <h2><span class="num">04</span>Application Permissions and System Access</h2>
-    <p>Numora Calc requests the absolute minimum system permissions required to function, following the principle of least privilege:</p>
-    <ul>
+    <h2><span class="num">04</span><span data-i18n="h2-04">Application Permissions and System Access</span></h2>
+    <p data-i18n="p-04">Numora Calc requests the absolute minimum system permissions required to function, following the principle of least privilege:</p>
+    <ul data-i18n-html="ul-permissions">
       <li><strong>Network access (INTERNET)</strong> — used only to update currency exchange rate tables and verify active standard licenses.</li>
       <li><strong>Local sandboxed storage</strong> — reads and writes to the secure client-side database on your device to keep notes, calculation history, and presets safe.</li>
       <li><strong>Zero dangerous permissions requested</strong> — the application does NOT request access to your Location, Camera, Contacts, SMS, Files, or Microphone.</li>
@@ -269,9 +316,9 @@
   </section>
 
   <section id="third-party">
-    <h2><span class="num">05</span>Third-Party Services</h2>
-    <p>We may integrate highly verified standard services to facilitate core operations. These processors may process technical metrics in accordance with their respective privacy policies:</p>
-    <ul>
+    <h2><span class="num">05</span><span data-i18n="h2-05">Third-Party Services</span></h2>
+    <p data-i18n="p-05">We may integrate highly verified standard services to facilitate core operations. These processors may process technical metrics in accordance with their respective privacy policies:</p>
+    <ul data-i18n-html="ul-thirdparty">
       <li>Google Play Services (for app distribution and billing integration)</li>
       <li>Firebase / Google Analytics (for crashlytics and stability diagnostics)</li>
       <li>Payment Gateways (to manage secure licensing charges)</li>
@@ -279,27 +326,27 @@
   </section>
 
   <section id="children">
-    <h2><span class="num">06</span>Children's Privacy</h2>
-    <p>Numora Calc does not knowingly collect, request, or target personal information from children under 13 years of age. If you believe a minor has registered an email account with us, please contact us immediately so we can remove the account registry.</p>
+    <h2><span class="num">06</span><span data-i18n="h2-06">Children's Privacy</span></h2>
+    <p data-i18n="p-06">Numora Calc does not knowingly collect, request, or target personal information from children under 13 years of age. If you believe a minor has registered an email account with us, please contact us immediately so we can remove the account registry.</p>
   </section>
 
   <section id="security">
-    <h2><span class="num">07</span>Data Storage, Security, and Your Deletion Rights</h2>
-    <ul>
+    <h2><span class="num">07</span><span data-i18n="h2-07">Data Storage, Security, and Your Deletion Rights</span></h2>
+    <ul data-i18n-html="ul-security">
       <li><strong>Data security:</strong> we implement standard operational and logical safeguards to protect the integrity of verified email registrations and account transactions.</li>
       <li><strong>On-demand instant deletion (the Purge Right):</strong> we fully respect your right to data erasure under Google Play Store policy, GDPR, and CCPA. Users can permanently delete all stored data, custom cycle notes, math histories, and clear system licensing associations instantly by clicking the "Delete All Stored Data" option inside the App's User Settings panel.</li>
     </ul>
   </section>
 
   <section id="changes">
-    <h2><span class="num">08</span>Changes to This Privacy Policy</h2>
-    <p>We reserve the right to modify this Privacy Policy to match potential feature updates. If we introduce cloud synchronization features in the future, we will update this policy and request your explicit opt-in confirmation within the app beforehand.</p>
+    <h2><span class="num">08</span><span data-i18n="h2-08">Changes to This Privacy Policy</span></h2>
+    <p data-i18n="p-08">We reserve the right to modify this Privacy Policy to match potential feature updates. If we introduce cloud synchronization features in the future, we will update this policy and request your explicit opt-in confirmation within the app beforehand.</p>
   </section>
 
   <section id="contact">
-    <h2><span class="num">09</span>Contact Us</h2>
-    <p>If you have any questions or feedback about this Privacy Policy, please feel free to reach out to us:</p>
-    <ul>
+    <h2><span class="num">09</span><span data-i18n="h2-09">Contact Us</span></h2>
+    <p data-i18n="p-09">If you have any questions or feedback about this Privacy Policy, please feel free to reach out to us:</p>
+    <ul data-i18n-html="ul-contact">
       <li><strong>Company name:</strong> Blue Acid Labs</li>
       <li><strong>Support email:</strong> <a href="mailto:blue.acid.labs@gmail.com">blue.acid.labs@gmail.com</a></li>
       <li><strong>Official website:</strong> <a href="https://numoracalc.com">https://numoracalc.com</a></li>
@@ -307,10 +354,528 @@
   </section>
 
   <footer>
-    <p>© 2026 Blue Acid Labs. All rights reserved.</p>
-    <p>Numora Calc Privacy Policy — Effective July 6, 2026</p>
+    <p data-i18n="footer1">© 2026 Blue Acid Labs. All rights reserved.</p>
+    <p data-i18n="footer2">Numora Calc Privacy Policy — Effective July 6, 2026</p>
   </footer>
 
 </div>
+
+<script>
+const I18N = {
+  en: {
+    langLabel: "Language",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "Privacy Policy",
+    effectiveDate: "Effective Date: July 6, 2026",
+    intro: "This Privacy Policy explains how Blue Acid Labs collects, uses, and protects information when you use the Numora Calc mobile and web application. We are committed to protecting user privacy and ensuring transparent handling of all local and account data.",
+    tocLabel: "On this page",
+    toc1: "Overview of Application Functions",
+    toc2: "Information We Collect and How We Handle It",
+    toc3: "Menstrual Cycle & Health-Related Estimations",
+    toc4: "Application Permissions and System Access",
+    toc5: "Third-Party Services",
+    toc6: "Children's Privacy",
+    toc7: "Data Storage, Security & Deletion Rights",
+    toc8: "Changes to This Privacy Policy",
+    toc9: "Contact Us",
+    "h2-01": "Overview of Application Functions",
+    "p-01": "Numora Calc is a multifunctional toolkit designed to provide standard calculators, specialty calculation modules (including Age Calculator, Unit Converter, and Discount calculators), real-time Currency Conversion tools, a local Notes Manager (Sticky Logs), and Menstrual Cycle tracking &amp; prediction tools.",
+    "h2-02": "Information We Collect and How We Handle It",
+    "p-02": "To support these utilities, Numora Calc is structured to run primarily offline, using sandboxed local storage on your device. We prioritize data minimization and do not run continuous tracking scripts or background telemetry.",
+    "h3-a": "A. User-Authored Content &amp; Tool Calculations (Stored Locally Only)",
+    "p-a": "Users may voluntarily enter data into our specialized calculating modules. This includes:",
+    "ul-a": "<li>Numerical entries, equations, birthdates, and discount percentages.</li><li>Custom text notes, Sticky Pad entries, and calculation logs.</li><li>Menstrual Cycle &amp; Health Tracking Parameters: last period start dates, cycle lengths, period durations, and customized cycle logs.</li>",
+    "callout-a": "<strong>Storage commitment:</strong> All calculation inputs, notes, and cycle parameters are saved exclusively on your device within the app's sandboxed environment (client-side local storage). This sensitive information is never automatically synchronized to external servers, sold, or shared with third parties by Blue Acid Labs.",
+    "h3-b": "B. License Registration &amp; Verification Data (Account Information)",
+    "p-b": "To access and verify your perpetual standard platform license, we collect minimal operational info during sign-up:",
+    "ul-b": "<li><strong>Email address</strong> — used solely for license binding, service communication, and activation checks.</li><li><strong>Country selection</strong> — collected to adapt default currency formats and comply with regional tax guidelines.</li><li><strong>Billing details</strong> — handled exclusively by our secure third-party payment gateway. Blue Acid Labs does not store or process your credit card numbers or raw bank credentials.</li>",
+    "h3-c": "C. Network Connection Data",
+    "ul-c": "<li><strong>Live exchange rates</strong> — when you launch the Currency Converter module, the app sends a secure, non-identifying API request to retrieve live exchange rates. No personal information or browser-identifying metadata is transmitted with this request.</li><li><strong>License checks</strong> — a simple online validation verifies your standard account status.</li>",
+    "h3-d": "D. Diagnostics &amp; Performance Analytics",
+    "p-d": "To ensure stability, eliminate app crashes, and deliver performance optimizations, we may gather anonymous device statistics:",
+    "ul-d": "<li>Operating system version (e.g., Android, iOS).</li><li>Device model configuration.</li><li>Anonymous diagnostic logs and crash reports.</li>",
+    "h2-03": "Menstrual Cycle &amp; Health-Related Estimations",
+    "ul-health": "<li><strong>Informational estimations only:</strong> calculations in the Menstrual Cycle module (including next period forecasts, ovulation predictions, and fertile window estimations) are generated via client-side algorithms based solely on your user-inputted cycle length.</li><li><strong>No medical reliance:</strong> this module is provided for self-organization and personal informational purposes only. It should not be treated as a form of contraception, medical diagnosis, or healthcare advice. Consult a qualified medical practitioner for all medical needs.</li>",
+    "h2-04": "Application Permissions and System Access",
+    "p-04": "Numora Calc requests the absolute minimum system permissions required to function, following the principle of least privilege:",
+    "ul-permissions": "<li><strong>Network access (INTERNET)</strong> — used only to update currency exchange rate tables and verify active standard licenses.</li><li><strong>Local sandboxed storage</strong> — reads and writes to the secure client-side database on your device to keep notes, calculation history, and presets safe.</li><li><strong>Zero dangerous permissions requested</strong> — the application does NOT request access to your Location, Camera, Contacts, SMS, Files, or Microphone.</li>",
+    "h2-05": "Third-Party Services",
+    "p-05": "We may integrate highly verified standard services to facilitate core operations. These processors may process technical metrics in accordance with their respective privacy policies:",
+    "ul-thirdparty": "<li>Google Play Services (for app distribution and billing integration)</li><li>Firebase / Google Analytics (for crashlytics and stability diagnostics)</li><li>Payment Gateways (to manage secure licensing charges)</li>",
+    "h2-06": "Children's Privacy",
+    "p-06": "Numora Calc does not knowingly collect, request, or target personal information from children under 13 years of age. If you believe a minor has registered an email account with us, please contact us immediately so we can remove the account registry.",
+    "h2-07": "Data Storage, Security, and Your Deletion Rights",
+    "ul-security": "<li><strong>Data security:</strong> we implement standard operational and logical safeguards to protect the integrity of verified email registrations and account transactions.</li><li><strong>On-demand instant deletion (the Purge Right):</strong> we fully respect your right to data erasure under Google Play Store policy, GDPR, and CCPA. Users can permanently delete all stored data, custom cycle notes, math histories, and clear system licensing associations instantly by clicking the \"Delete All Stored Data\" option inside the App's User Settings panel.</li>",
+    "h2-08": "Changes to This Privacy Policy",
+    "p-08": "We reserve the right to modify this Privacy Policy to match potential feature updates. If we introduce cloud synchronization features in the future, we will update this policy and request your explicit opt-in confirmation within the app beforehand.",
+    "h2-09": "Contact Us",
+    "p-09": "If you have any questions or feedback about this Privacy Policy, please feel free to reach out to us:",
+    "ul-contact": "<li><strong>Company name:</strong> Blue Acid Labs</li><li><strong>Support email:</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>Official website:</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. All rights reserved.",
+    footer2: "Numora Calc Privacy Policy — Effective July 6, 2026"
+  },
+
+  ja: {
+    langLabel: "言語",
+    eyebrow: "Numora Calc・Blue Acid Labs",
+    h1: "プライバシーポリシー",
+    effectiveDate: "発効日：2026年7月6日",
+    intro: "本プライバシーポリシーは、Numora Calc モバイル・ウェブアプリケーションのご利用時に Blue Acid Labs が情報をどのように収集、使用、保護するかを説明するものです。当社はユーザーのプライバシー保護と、ローカルおよびアカウントデータの透明な取り扱いに努めています。",
+    tocLabel: "目次",
+    toc1: "アプリケーション機能の概要",
+    toc2: "収集する情報とその取り扱いについて",
+    toc3: "生理周期および健康関連の推定機能",
+    toc4: "アプリの権限とシステムアクセス",
+    toc5: "第三者サービス",
+    toc6: "お子様のプライバシー",
+    toc7: "データの保存・セキュリティおよび削除の権利",
+    toc8: "本ポリシーの変更について",
+    toc9: "お問い合わせ",
+    "h2-01": "アプリケーション機能の概要",
+    "p-01": "Numora Calc は、標準的な計算機能、専門計算モジュール（年齢計算、単位換算、割引計算など）、リアルタイム通貨換算ツール、ローカルのメモ管理機能（付箋ログ）、そして生理周期の記録・予測ツールを提供する多機能ツールキットです。",
+    "h2-02": "収集する情報とその取り扱いについて",
+    "p-02": "これらの機能を支えるため、Numora Calc は基本的にオフラインで動作するよう設計されており、端末上のサンドボックス化されたローカルストレージを使用します。当社はデータの最小化を重視し、継続的な追跡スクリプトやバックグラウンドのテレメトリは実行しません。",
+    "h3-a": "A. ユーザー作成コンテンツおよびツール計算結果（ローカル保存のみ）",
+    "p-a": "ユーザーは、各種専用計算モジュールに任意でデータを入力できます。これには以下が含まれます。",
+    "ul-a": "<li>数値、計算式、生年月日、割引率などの入力データ</li><li>カスタムテキストメモ、付箋メモ、計算履歴</li><li>生理周期・健康記録パラメータ：直近の生理開始日、周期の長さ、生理期間、カスタム周期ログ</li>",
+    "callout-a": "<strong>保存に関する約束：</strong>すべての計算入力、メモ、周期パラメータは、アプリのサンドボックス環境内（クライアント側ローカルストレージ）でお使いの端末にのみ保存されます。これらの機密情報が外部サーバーへ自動的に同期されたり、Blue Acid Labs によって第三者へ販売・共有されたりすることは一切ありません。",
+    "h3-b": "B. ライセンス登録・認証データ（アカウント情報）",
+    "p-b": "永続的な標準プラットフォームライセンスへのアクセスおよび認証のため、登録時に以下の最小限の運用情報を収集します。",
+    "ul-b": "<li><strong>メールアドレス</strong> — ライセンスの紐付け、サービス連絡、認証確認にのみ使用します。</li><li><strong>国の選択</strong> — 既定の通貨形式の調整および地域の税制ガイドラインへの準拠のために収集します。</li><li><strong>請求情報</strong> — 安全な第三者決済ゲートウェイによってのみ処理されます。Blue Acid Labs がクレジットカード番号や生の銀行認証情報を保存・処理することはありません。</li>",
+    "h3-c": "C. ネットワーク接続データ",
+    "ul-c": "<li><strong>リアルタイム為替レート</strong> — 通貨換算モジュールを起動すると、アプリは安全かつ個人を特定しない API リクエストを送信し、最新の為替レートを取得します。このリクエストには個人情報やブラウザ識別情報は一切含まれません。</li><li><strong>ライセンス確認</strong> — 標準アカウントの状態を確認する簡易的なオンライン検証です。</li>",
+    "h3-d": "D. 診断およびパフォーマンス分析",
+    "p-d": "安定性の確保、アプリクラッシュの解消、パフォーマンス最適化のため、匿名の端末統計情報を収集する場合があります。",
+    "ul-d": "<li>OSバージョン（例：Android、iOS）</li><li>端末モデルの構成</li><li>匿名の診断ログおよびクラッシュレポート</li>",
+    "h2-03": "生理周期および健康関連の推定機能",
+    "ul-health": "<li><strong>あくまで情報提供のための推定値：</strong>生理周期モジュール内の計算（次回生理予測、排卵予測、妊娠しやすい期間の推定を含む）は、ユーザーが入力した周期の長さのみに基づき、クライアント側のアルゴリズムによって生成されます。</li><li><strong>医療目的での使用不可：</strong>本モジュールは自己管理および個人的な情報提供のみを目的としています。避妊手段、医療診断、または医療アドバイスとして扱うべきではありません。医療に関するご相談は必ず有資格の医療専門家にご相談ください。</li>",
+    "h2-04": "アプリの権限とシステムアクセス",
+    "p-04": "Numora Calc は、最小権限の原則に従い、機能に必要な最小限のシステム権限のみを要求します。",
+    "ul-permissions": "<li><strong>ネットワークアクセス（INTERNET）</strong> — 通貨為替レート表の更新および有効な標準ライセンスの確認にのみ使用します。</li><li><strong>ローカルサンドボックスストレージ</strong> — お使いの端末上の安全なクライアント側データベースへの読み書きを行い、メモ、計算履歴、プリセットを安全に保ちます。</li><li><strong>危険な権限の要求は一切なし</strong> — 本アプリは位置情報、カメラ、連絡先、SMS、ファイル、マイクへのアクセスを要求しません。</li>",
+    "h2-05": "第三者サービス",
+    "p-05": "当社は、主要業務を支援するために厳格に検証された標準的なサービスを利用する場合があります。これらの処理業者は、各社のプライバシーポリシーに従って技術的な指標を処理する場合があります。",
+    "ul-thirdparty": "<li>Google Play サービス（アプリ配信および課金統合のため）</li><li>Firebase／Google Analytics（クラッシュ解析および安定性診断のため）</li><li>決済ゲートウェイ（安全なライセンス料金の管理のため）</li>",
+    "h2-06": "お子様のプライバシー",
+    "p-06": "Numora Calc は、13歳未満のお子様の個人情報を意図的に収集、要求、または対象とすることはありません。未成年者が当社にメールアカウントを登録したと思われる場合は、直ちにご連絡ください。速やかにアカウント登録情報を削除いたします。",
+    "h2-07": "データの保存・セキュリティおよび削除の権利",
+    "ul-security": "<li><strong>データセキュリティ：</strong>当社は、認証済みメール登録およびアカウント取引の完全性を保護するため、標準的な運用上および論理上の保護対策を実施しています。</li><li><strong>オンデマンドでの即時削除（削除の権利）：</strong>当社は、Google Play ストアのポリシー、GDPR、CCPA に基づくデータ消去の権利を完全に尊重します。ユーザーは、アプリの「ユーザー設定」パネル内にある「保存データをすべて削除」オプションをクリックすることで、保存されたすべてのデータ、カスタム周期メモ、計算履歴を即座に完全削除し、システムのライセンス関連付けを消去できます。</li>",
+    "h2-08": "本ポリシーの変更について",
+    "p-08": "当社は、今後の機能追加に合わせて本プライバシーポリシーを変更する権利を留保します。将来クラウド同期機能を導入する場合は、事前に本ポリシーを更新し、アプリ内で明示的なオプトイン確認を求めます。",
+    "h2-09": "お問い合わせ",
+    "p-09": "本プライバシーポリシーに関するご質問やご意見がございましたら、お気軽にお問い合わせください。",
+    "ul-contact": "<li><strong>会社名：</strong>Blue Acid Labs</li><li><strong>サポートメール：</strong><a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>公式サイト：</strong><a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. All rights reserved.",
+    footer2: "Numora Calc プライバシーポリシー — 発効日：2026年7月6日"
+  },
+
+  ko: {
+    langLabel: "언어",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "개인정보 처리방침",
+    effectiveDate: "시행일: 2026년 7월 6일",
+    intro: "본 개인정보 처리방침은 Numora Calc 모바일 및 웹 애플리케이션을 이용하실 때 Blue Acid Labs가 정보를 수집, 사용 및 보호하는 방법을 설명합니다. 당사는 사용자의 개인정보를 보호하고 모든 로컬 및 계정 데이터를 투명하게 처리할 것을 약속합니다.",
+    tocLabel: "목차",
+    toc1: "애플리케이션 기능 개요",
+    toc2: "수집하는 정보 및 처리 방법",
+    toc3: "생리 주기 및 건강 관련 예측 기능",
+    toc4: "애플리케이션 권한 및 시스템 접근",
+    toc5: "제3자 서비스",
+    toc6: "아동의 개인정보 보호",
+    toc7: "데이터 저장, 보안 및 삭제 권리",
+    toc8: "본 방침의 변경",
+    toc9: "문의하기",
+    "h2-01": "애플리케이션 기능 개요",
+    "p-01": "Numora Calc는 표준 계산기, 전문 계산 모듈(나이 계산기, 단위 변환기, 할인 계산기 등), 실시간 환율 변환 도구, 로컬 메모 관리 기능(스티키 로그), 그리고 생리 주기 추적 및 예측 도구를 제공하는 다기능 툴킷입니다.",
+    "h2-02": "수집하는 정보 및 처리 방법",
+    "p-02": "이러한 기능을 지원하기 위해 Numora Calc는 기본적으로 오프라인에서 작동하도록 설계되었으며, 사용자 기기의 샌드박스 처리된 로컬 저장소를 사용합니다. 당사는 데이터 최소화를 우선시하며, 지속적인 추적 스크립트나 백그라운드 원격 측정을 실행하지 않습니다.",
+    "h3-a": "A. 사용자 작성 콘텐츠 및 도구 계산 결과 (로컬에만 저장)",
+    "p-a": "사용자는 당사의 전문 계산 모듈에 자발적으로 데이터를 입력할 수 있습니다. 여기에는 다음이 포함됩니다.",
+    "ul-a": "<li>숫자 입력값, 계산식, 생년월일, 할인율</li><li>사용자 정의 텍스트 메모, 스티키 패드 항목 및 계산 기록</li><li>생리 주기 및 건강 추적 매개변수: 최근 생리 시작일, 주기 길이, 생리 기간, 사용자 정의 주기 기록</li>",
+    "callout-a": "<strong>저장에 관한 약속:</strong> 모든 계산 입력값, 메모 및 주기 매개변수는 앱의 샌드박스 환경(클라이언트 측 로컬 저장소) 내에서 사용자의 기기에만 저장됩니다. 이러한 민감한 정보는 외부 서버로 자동 동기화되거나, Blue Acid Labs에 의해 판매 또는 제3자와 공유되지 않습니다.",
+    "h3-b": "B. 라이선스 등록 및 인증 데이터 (계정 정보)",
+    "p-b": "영구 표준 플랫폼 라이선스에 접근하고 이를 인증하기 위해, 가입 시 다음과 같은 최소한의 운영 정보를 수집합니다.",
+    "ul-b": "<li><strong>이메일 주소</strong> — 라이선스 연결, 서비스 안내, 활성화 확인을 위해서만 사용됩니다.</li><li><strong>국가 선택</strong> — 기본 통화 형식을 조정하고 지역 세금 규정을 준수하기 위해 수집됩니다.</li><li><strong>결제 정보</strong> — 당사의 안전한 제3자 결제 게이트웨이를 통해서만 처리됩니다. Blue Acid Labs는 신용카드 번호나 은행 인증 정보를 저장하거나 처리하지 않습니다.</li>",
+    "h3-c": "C. 네트워크 연결 데이터",
+    "ul-c": "<li><strong>실시간 환율</strong> — 환율 변환 모듈을 실행하면 앱은 안전하고 개인을 식별하지 않는 API 요청을 보내 실시간 환율을 가져옵니다. 이 요청에는 개인정보나 브라우저 식별 메타데이터가 전송되지 않습니다.</li><li><strong>라이선스 확인</strong> — 표준 계정 상태를 확인하는 간단한 온라인 검증입니다.</li>",
+    "h3-d": "D. 진단 및 성능 분석",
+    "p-d": "안정성을 확보하고 앱 충돌을 제거하며 성능을 최적화하기 위해, 당사는 익명의 기기 통계를 수집할 수 있습니다.",
+    "ul-d": "<li>운영체제 버전(예: Android, iOS)</li><li>기기 모델 구성</li><li>익명의 진단 로그 및 충돌 보고서</li>",
+    "h2-03": "생리 주기 및 건강 관련 예측 기능",
+    "ul-health": "<li><strong>정보 제공 목적의 예측치입니다:</strong> 생리 주기 모듈의 계산(다음 생리 예측, 배란 예측, 가임기 예측 포함)은 오직 사용자가 입력한 주기 길이만을 기반으로 클라이언트 측 알고리즘을 통해 생성됩니다.</li><li><strong>의료적 신뢰 불가:</strong> 이 모듈은 자기 관리 및 개인 정보 제공 목적으로만 제공됩니다. 피임 수단, 의학적 진단 또는 의료 조언으로 취급되어서는 안 됩니다. 모든 의료 관련 사항은 반드시 자격을 갖춘 의료 전문가와 상담하시기 바랍니다.</li>",
+    "h2-04": "애플리케이션 권한 및 시스템 접근",
+    "p-04": "Numora Calc는 최소 권한 원칙에 따라 기능 작동에 반드시 필요한 최소한의 시스템 권한만을 요청합니다.",
+    "ul-permissions": "<li><strong>네트워크 접근(INTERNET)</strong> — 환율표 업데이트 및 유효한 표준 라이선스 확인에만 사용됩니다.</li><li><strong>로컬 샌드박스 저장소</strong> — 사용자 기기 내 안전한 클라이언트 측 데이터베이스에 읽기/쓰기를 수행하여 메모, 계산 기록 및 사전 설정을 안전하게 보관합니다.</li><li><strong>위험 권한 요청 없음</strong> — 본 앱은 위치, 카메라, 연락처, SMS, 파일 또는 마이크에 대한 접근을 요청하지 않습니다.</li>",
+    "h2-05": "제3자 서비스",
+    "p-05": "당사는 핵심 운영을 지원하기 위해 철저히 검증된 표준 서비스를 통합할 수 있습니다. 이러한 처리업체는 각자의 개인정보 처리방침에 따라 기술적 지표를 처리할 수 있습니다.",
+    "ul-thirdparty": "<li>Google Play 서비스(앱 배포 및 결제 통합용)</li><li>Firebase / Google Analytics(충돌 분석 및 안정성 진단용)</li><li>결제 게이트웨이(안전한 라이선스 요금 관리용)</li>",
+    "h2-06": "아동의 개인정보 보호",
+    "p-06": "Numora Calc는 만 13세 미만 아동의 개인정보를 고의로 수집, 요청 또는 대상으로 삼지 않습니다. 미성년자가 당사에 이메일 계정을 등록했다고 판단되는 경우, 즉시 당사에 연락해 주시면 해당 계정 등록 정보를 삭제하겠습니다.",
+    "h2-07": "데이터 저장, 보안 및 삭제 권리",
+    "ul-security": "<li><strong>데이터 보안:</strong> 당사는 인증된 이메일 등록 및 계정 거래의 무결성을 보호하기 위해 표준적인 운영 및 논리적 보호 조치를 시행합니다.</li><li><strong>즉시 삭제 요청(삭제 권리):</strong> 당사는 Google Play 스토어 정책, GDPR, CCPA에 따른 데이터 삭제 권리를 완전히 존중합니다. 사용자는 앱의 '사용자 설정' 패널에서 '저장된 모든 데이터 삭제' 옵션을 클릭하여 저장된 모든 데이터, 사용자 정의 주기 메모, 계산 기록을 즉시 영구 삭제하고 시스템 라이선스 연결을 해제할 수 있습니다.</li>",
+    "h2-08": "본 방침의 변경",
+    "p-08": "당사는 향후 기능 업데이트에 맞춰 본 개인정보 처리방침을 수정할 권리를 보유합니다. 향후 클라우드 동기화 기능을 도입할 경우, 사전에 본 방침을 업데이트하고 앱 내에서 명시적인 옵트인 동의를 요청할 것입니다.",
+    "h2-09": "문의하기",
+    "p-09": "본 개인정보 처리방침에 대해 질문이나 의견이 있으시면 언제든지 문의해 주시기 바랍니다.",
+    "ul-contact": "<li><strong>회사명:</strong> Blue Acid Labs</li><li><strong>지원 이메일:</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>공식 웹사이트:</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. All rights reserved.",
+    footer2: "Numora Calc 개인정보 처리방침 — 시행일: 2026년 7월 6일"
+  },
+
+  zh: {
+    langLabel: "语言",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "隐私政策",
+    effectiveDate: "生效日期：2026年7月6日",
+    intro: "本隐私政策说明了在您使用 Numora Calc 移动及网页应用程序时，Blue Acid Labs 如何收集、使用和保护相关信息。我们致力于保护用户隐私，并确保对所有本地及账户数据的透明处理。",
+    tocLabel: "目录",
+    toc1: "应用程序功能概述",
+    toc2: "我们收集的信息及处理方式",
+    toc3: "生理周期与健康相关预测",
+    toc4: "应用权限与系统访问",
+    toc5: "第三方服务",
+    toc6: "儿童隐私",
+    toc7: "数据存储、安全与删除权利",
+    toc8: "本政策的变更",
+    toc9: "联系我们",
+    "h2-01": "应用程序功能概述",
+    "p-01": "Numora Calc 是一款多功能工具包，提供标准计算器、专业计算模块（包括年龄计算器、单位换算器和折扣计算器）、实时汇率转换工具、本地便签管理（便签日志），以及生理周期跟踪与预测工具。",
+    "h2-02": "我们收集的信息及处理方式",
+    "p-02": "为支持这些功能，Numora Calc 主要采用离线运行方式，使用设备上的沙盒化本地存储。我们优先考虑数据最小化原则，不运行持续性追踪脚本或后台遥测。",
+    "h3-a": "A. 用户自建内容与工具计算结果（仅存储于本地）",
+    "p-a": "用户可自愿在我们的专用计算模块中输入数据，包括：",
+    "ul-a": "<li>数值输入、计算公式、出生日期及折扣百分比</li><li>自定义文字备注、便签条目及计算记录</li><li>生理周期与健康跟踪参数：最近一次经期开始日期、周期长度、经期持续时间及自定义周期日志</li>",
+    "callout-a": "<strong>存储承诺：</strong>所有计算输入、备注及周期参数均仅保存在您设备的应用沙盒环境（客户端本地存储）中。这些敏感信息绝不会自动同步至外部服务器，也不会被 Blue Acid Labs 出售或与第三方共享。",
+    "h3-b": "B. 许可注册与验证数据（账户信息）",
+    "p-b": "为访问并验证您的永久标准平台许可，我们在注册时会收集以下最基本的运营信息：",
+    "ul-b": "<li><strong>电子邮箱地址</strong> — 仅用于许可绑定、服务通讯及激活验证。</li><li><strong>国家/地区选择</strong> — 用于调整默认货币格式并遵守当地税务规定。</li><li><strong>账单信息</strong> — 完全由我们安全的第三方支付网关处理。Blue Acid Labs 不会存储或处理您的信用卡号或原始银行凭证。</li>",
+    "h3-c": "C. 网络连接数据",
+    "ul-c": "<li><strong>实时汇率</strong> — 当您启动货币转换模块时，应用会发送一个安全且不含身份信息的 API 请求以获取实时汇率。此请求不会传输任何个人信息或浏览器识别元数据。</li><li><strong>许可检查</strong> — 一项简单的在线验证，用于确认您的标准账户状态。</li>",
+    "h3-d": "D. 诊断与性能分析",
+    "p-d": "为确保稳定性、消除应用崩溃并优化性能，我们可能会收集匿名的设备统计信息：",
+    "ul-d": "<li>操作系统版本（例如 Android、iOS）</li><li>设备型号配置</li><li>匿名诊断日志及崩溃报告</li>",
+    "h2-03": "生理周期与健康相关预测",
+    "ul-health": "<li><strong>仅供参考的预测结果：</strong>生理周期模块中的计算（包括下次经期预测、排卵预测和易孕期估算）完全基于用户输入的周期长度，通过客户端算法生成。</li><li><strong>不可作为医疗依据：</strong>本模块仅用于个人自我管理及信息参考目的，不应被视为避孕方式、医学诊断或医疗建议。如有任何医疗需求，请务必咨询专业医疗人员。</li>",
+    "h2-04": "应用权限与系统访问",
+    "p-04": "Numora Calc 遵循最小权限原则，仅请求应用正常运行所需的最基本系统权限：",
+    "ul-permissions": "<li><strong>网络访问（INTERNET）</strong> — 仅用于更新汇率表及验证有效的标准许可。</li><li><strong>本地沙盒存储</strong> — 读写您设备上安全的客户端数据库，以妥善保存备注、计算记录及预设。</li><li><strong>不请求任何高风险权限</strong> — 本应用不会请求访问您的位置、摄像头、通讯录、短信、文件或麦克风。</li>",
+    "h2-05": "第三方服务",
+    "p-05": "我们可能会集成经过严格验证的标准服务以支持核心运营。这些处理方（服务商）可能会依据其各自的隐私政策处理相关技术指标：",
+    "ul-thirdparty": "<li>Google Play 服务（用于应用分发及计费集成）</li><li>Firebase / Google Analytics（用于崩溃分析及稳定性诊断）</li><li>支付网关（用于管理安全的许可费用）</li>",
+    "h2-06": "儿童隐私",
+    "p-06": "Numora Calc 不会故意收集、请求或以任何方式针对13岁以下儿童收集个人信息。如果您认为未成年人已在我们平台注册了电子邮箱账户，请立即与我们联系，以便我们删除该账户信息。",
+    "h2-07": "数据存储、安全与您的删除权利",
+    "ul-security": "<li><strong>数据安全：</strong>我们采取标准的运营及逻辑安全措施，以保护已验证的邮箱注册信息及账户交易的完整性。</li><li><strong>随时即时删除（数据清除权）：</strong>我们完全尊重您根据 Google Play 商店政策、GDPR 及 CCPA 所享有的数据删除权利。用户可通过点击应用内“用户设置”面板中的“删除所有存储数据”选项，即时永久删除所有存储数据、自定义周期备注、计算记录，并清除系统许可关联信息。</li>",
+    "h2-08": "本政策的变更",
+    "p-08": "我们保留根据潜在功能更新修改本隐私政策的权利。如果我们未来引入云同步功能，我们将提前更新本政策，并在应用内征求您的明确同意（opt-in）。",
+    "h2-09": "联系我们",
+    "p-09": "如果您对本隐私政策有任何疑问或反馈，欢迎随时与我们联系：",
+    "ul-contact": "<li><strong>公司名称：</strong>Blue Acid Labs</li><li><strong>支持邮箱：</strong><a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>官方网站：</strong><a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. 保留所有权利。",
+    footer2: "Numora Calc 隐私政策 — 生效日期：2026年7月6日"
+  },
+
+  ar: {
+    langLabel: "اللغة",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "سياسة الخصوصية",
+    effectiveDate: "تاريخ السريان: 6 يوليو 2026",
+    intro: "توضّح سياسة الخصوصية هذه كيفية قيام Blue Acid Labs بجمع المعلومات واستخدامها وحمايتها عند استخدامك لتطبيق Numora Calc للهواتف والويب. نحن ملتزمون بحماية خصوصية المستخدمين وضمان التعامل الشفاف مع جميع البيانات المحلية وبيانات الحساب.",
+    tocLabel: "في هذه الصفحة",
+    toc1: "نظرة عامة على وظائف التطبيق",
+    toc2: "المعلومات التي نجمعها وكيفية التعامل معها",
+    toc3: "تقديرات الدورة الشهرية والصحة",
+    toc4: "أذونات التطبيق والوصول إلى النظام",
+    toc5: "خدمات الجهات الخارجية",
+    toc6: "خصوصية الأطفال",
+    toc7: "تخزين البيانات والأمان وحقوق الحذف",
+    toc8: "التغييرات على سياسة الخصوصية هذه",
+    toc9: "تواصل معنا",
+    "h2-01": "نظرة عامة على وظائف التطبيق",
+    "p-01": "تطبيق Numora Calc هو مجموعة أدوات متعددة الوظائف مصمّمة لتوفير آلات حاسبة قياسية، ووحدات حسابية متخصصة (بما في ذلك حاسبة العمر، ومحوّل الوحدات، وحاسبات الخصم)، وأدوات تحويل عملات فورية، ومدير ملاحظات محلي (سجلات لاصقة)، وأدوات تتبع الدورة الشهرية والتنبؤ بها.",
+    "h2-02": "المعلومات التي نجمعها وكيفية التعامل معها",
+    "p-02": "لدعم هذه الأدوات، صُمّم تطبيق Numora Calc للعمل بشكل أساسي دون اتصال بالإنترنت، باستخدام تخزين محلي معزول (sandboxed) على جهازك. نولي أولوية لتقليل البيانات ولا نشغّل نصوص تتبّع مستمرة أو قياسات تشغيل خلفية.",
+    "h3-a": "أ. المحتوى الذي ينشئه المستخدم وحسابات الأدوات (تُخزَّن محليًا فقط)",
+    "p-a": "يمكن للمستخدمين إدخال بيانات طوعًا في وحدات الحساب المتخصصة لدينا، وتشمل:",
+    "ul-a": "<li>الإدخالات الرقمية، والمعادلات، وتواريخ الميلاد، ونسب الخصم.</li><li>الملاحظات النصية المخصّصة، وإدخالات المفكرة اللاصقة، وسجلات الحسابات.</li><li>معايير تتبّع الدورة الشهرية والصحة: تواريخ بدء آخر دورة، ومدد الدورة، ومدد الحيض، وسجلات الدورة المخصّصة.</li>",
+    "callout-a": "<strong>التزام التخزين:</strong> تُحفَظ جميع مدخلات الحسابات والملاحظات ومعايير الدورة حصريًا على جهازك ضمن البيئة المعزولة للتطبيق (تخزين محلي من جانب العميل). لا تتم مزامنة هذه المعلومات الحساسة تلقائيًا مع أي خوادم خارجية، ولا يتم بيعها أو مشاركتها مع أطراف ثالثة من قِبل Blue Acid Labs.",
+    "h3-b": "ب. بيانات تسجيل الترخيص والتحقّق (معلومات الحساب)",
+    "p-b": "للوصول إلى ترخيص المنصة القياسي الدائم والتحقّق منه، نجمع الحد الأدنى من المعلومات التشغيلية عند التسجيل:",
+    "ul-b": "<li><strong>عنوان البريد الإلكتروني</strong> — يُستخدم فقط لربط الترخيص والتواصل الخاص بالخدمة والتحقّق من التفعيل.</li><li><strong>اختيار الدولة</strong> — يُجمع لتكييف تنسيقات العملة الافتراضية والامتثال للإرشادات الضريبية الإقليمية.</li><li><strong>تفاصيل الفوترة</strong> — تتم معالجتها حصريًا عبر بوابة الدفع الآمنة التابعة لجهة خارجية. لا تقوم Blue Acid Labs بتخزين أو معالجة أرقام بطاقات الائتمان أو بيانات الاعتماد المصرفية الخام.</li>",
+    "h3-c": "ج. بيانات الاتصال بالشبكة",
+    "ul-c": "<li><strong>أسعار الصرف الفورية</strong> — عند تشغيل وحدة محوّل العملات، يرسل التطبيق طلب واجهة برمجة تطبيقات آمنًا وغير معرِّف للهوية لاسترجاع أسعار الصرف الفورية. لا يتم إرسال أي معلومات شخصية أو بيانات وصفية تُعرّف بالمتصفح مع هذا الطلب.</li><li><strong>التحقّق من الترخيص</strong> — عملية تحقّق إلكترونية بسيطة تُثبت حالة حسابك القياسي.</li>",
+    "h3-d": "د. التشخيص وتحليلات الأداء",
+    "p-d": "لضمان الاستقرار والقضاء على أعطال التطبيق وتقديم تحسينات في الأداء، قد نجمع إحصاءات مجهولة الهوية عن الجهاز:",
+    "ul-d": "<li>إصدار نظام التشغيل (مثل Android أو iOS).</li><li>تهيئة طراز الجهاز.</li><li>سجلات تشخيصية مجهولة الهوية وتقارير الأعطال.</li>",
+    "h2-03": "تقديرات الدورة الشهرية والصحة",
+    "ul-health": "<li><strong>تقديرات لأغراض معلوماتية فقط:</strong> تُولَّد الحسابات في وحدة الدورة الشهرية (بما في ذلك توقّعات موعد الدورة القادمة، والتنبؤ بالإباضة، وتقدير فترة الخصوبة) عبر خوارزميات تعمل من جانب الجهاز، وتعتمد فقط على طول الدورة الذي أدخله المستخدم.</li><li><strong>لا يُعتمد عليها طبيًا:</strong> تُقدَّم هذه الوحدة لأغراض التنظيم الشخصي والمعلومات الفردية فقط، ولا ينبغي اعتبارها وسيلة لمنع الحمل أو تشخيصًا طبيًا أو استشارة طبية. يُرجى استشارة طبيب مختصّ لجميع الاحتياجات الطبية.</li>",
+    "h2-04": "أذونات التطبيق والوصول إلى النظام",
+    "p-04": "يطلب تطبيق Numora Calc الحد الأدنى المطلق من أذونات النظام اللازمة للعمل، وفقًا لمبدأ أقل الامتيازات:",
+    "ul-permissions": "<li><strong>الوصول إلى الشبكة (INTERNET)</strong> — يُستخدم فقط لتحديث جداول أسعار صرف العملات والتحقّق من الترخيص القياسي الفعّال.</li><li><strong>التخزين المحلي المعزول</strong> — يقرأ ويكتب في قاعدة البيانات الآمنة من جانب العميل على جهازك للحفاظ على الملاحظات وسجل الحسابات والإعدادات المسبقة بأمان.</li><li><strong>لا يُطلب أي إذن حسّاس</strong> — لا يطلب التطبيق الوصول إلى الموقع، أو الكاميرا، أو جهات الاتصال، أو الرسائل النصية، أو الملفات، أو الميكروفون.</li>",
+    "h2-05": "خدمات الجهات الخارجية",
+    "p-05": "قد ندمج خدمات قياسية موثوقة للغاية لتسهيل العمليات الأساسية. قد تعالج هذه الجهات المعلومات التقنية وفقًا لسياسات الخصوصية الخاصة بها:",
+    "ul-thirdparty": "<li>خدمات Google Play (لتوزيع التطبيق ودمج الفوترة)</li><li>Firebase / Google Analytics (لتحليل الأعطال وتشخيص الاستقرار)</li><li>بوابات الدفع (لإدارة رسوم الترخيص الآمنة)</li>",
+    "h2-06": "خصوصية الأطفال",
+    "p-06": "لا يقوم تطبيق Numora Calc عن قصد بجمع أو طلب أو استهداف معلومات شخصية من الأطفال دون سن 13 عامًا. إذا كنت تعتقد أن قاصرًا قد سجّل حساب بريد إلكتروني لدينا، يُرجى التواصل معنا فورًا حتى نتمكّن من إزالة سجل الحساب.",
+    "h2-07": "تخزين البيانات والأمان وحقوقك في الحذف",
+    "ul-security": "<li><strong>أمان البيانات:</strong> نطبّق تدابير حماية تشغيلية ومنطقية قياسية لحماية سلامة تسجيلات البريد الإلكتروني الموثّقة ومعاملات الحساب.</li><li><strong>الحذف الفوري عند الطلب (حق المحو):</strong> نحترم تمامًا حقّك في محو البيانات بموجب سياسة متجر Google Play، ولائحة GDPR، وقانون CCPA. يمكن للمستخدمين حذف جميع البيانات المخزَّنة، وملاحظات الدورة المخصّصة، وسجلات الحسابات، ومسح ارتباطات ترخيص النظام بشكل فوري ونهائي بالنقر على خيار \"حذف جميع البيانات المخزَّنة\" داخل لوحة إعدادات المستخدم في التطبيق.</li>",
+    "h2-08": "التغييرات على سياسة الخصوصية هذه",
+    "p-08": "نحتفظ بالحق في تعديل سياسة الخصوصية هذه لمواكبة تحديثات الميزات المحتملة. وإذا قمنا مستقبلًا بإدخال ميزات مزامنة سحابية، فسنحدّث هذه السياسة ونطلب موافقتك الصريحة داخل التطبيق مسبقًا.",
+    "h2-09": "تواصل معنا",
+    "p-09": "إذا كانت لديك أي أسئلة أو ملاحظات بخصوص سياسة الخصوصية هذه، فلا تتردّد في التواصل معنا:",
+    "ul-contact": "<li><strong>اسم الشركة:</strong> Blue Acid Labs</li><li><strong>البريد الإلكتروني للدعم:</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>الموقع الرسمي:</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. جميع الحقوق محفوظة.",
+    footer2: "سياسة خصوصية Numora Calc — سارية من 6 يوليو 2026"
+  },
+
+  de: {
+    langLabel: "Sprache",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "Datenschutzerklärung",
+    effectiveDate: "Gültig ab: 6. Juli 2026",
+    intro: "Diese Datenschutzerklärung erläutert, wie Blue Acid Labs Informationen erhebt, verwendet und schützt, wenn Sie die mobile Anwendung und Web-App Numora Calc nutzen. Wir setzen uns für den Schutz der Nutzerprivatsphäre und einen transparenten Umgang mit allen lokalen Daten und Kontodaten ein.",
+    tocLabel: "Auf dieser Seite",
+    toc1: "Überblick über die Funktionen der Anwendung",
+    toc2: "Informationen, die wir erheben, und wie wir damit umgehen",
+    toc3: "Menstruationszyklus- und gesundheitsbezogene Schätzungen",
+    toc4: "App-Berechtigungen und Systemzugriff",
+    toc5: "Dienste Dritter",
+    toc6: "Datenschutz für Kinder",
+    toc7: "Datenspeicherung, Sicherheit und Ihr Löschrecht",
+    toc8: "Änderungen dieser Datenschutzerklärung",
+    toc9: "Kontakt",
+    "h2-01": "Überblick über die Funktionen der Anwendung",
+    "p-01": "Numora Calc ist ein multifunktionales Toolkit mit Standardrechnern, speziellen Berechnungsmodulen (u. a. Altersrechner, Einheitenumrechner und Rabattrechner), Echtzeit-Währungsumrechnungstools, einem lokalen Notizmanager (Sticky Logs) sowie Tools zur Verfolgung und Vorhersage des Menstruationszyklus.",
+    "h2-02": "Informationen, die wir erheben, und wie wir damit umgehen",
+    "p-02": "Um diese Funktionen zu unterstützen, ist Numora Calc so konzipiert, dass es überwiegend offline läuft und dabei einen isolierten (sandboxed) lokalen Speicher auf Ihrem Gerät verwendet. Wir setzen auf Datenminimierung und führen keine kontinuierlichen Tracking-Skripte oder Hintergrund-Telemetrie aus.",
+    "h3-a": "A. Vom Nutzer erstellte Inhalte &amp; Tool-Berechnungen (ausschließlich lokal gespeichert)",
+    "p-a": "Nutzer können freiwillig Daten in unsere speziellen Berechnungsmodule eingeben. Dazu gehören:",
+    "ul-a": "<li>Zahleneingaben, Gleichungen, Geburtsdaten und Rabattprozentsätze.</li><li>Individuelle Textnotizen, Sticky-Pad-Einträge und Berechnungsprotokolle.</li><li>Parameter zur Verfolgung des Menstruationszyklus und der Gesundheit: Beginn der letzten Periode, Zykluslängen, Periodendauer und individuelle Zyklusprotokolle.</li>",
+    "callout-a": "<strong>Speicherzusage:</strong> Alle Berechnungseingaben, Notizen und Zyklusparameter werden ausschließlich auf Ihrem Gerät innerhalb der isolierten Umgebung der App (clientseitiger lokaler Speicher) gespeichert. Diese sensiblen Informationen werden von Blue Acid Labs niemals automatisch mit externen Servern synchronisiert, verkauft oder an Dritte weitergegeben.",
+    "h3-b": "B. Lizenzregistrierungs- und Verifizierungsdaten (Kontoinformationen)",
+    "p-b": "Um Zugang zu Ihrer dauerhaften Standard-Plattformlizenz zu erhalten und diese zu verifizieren, erheben wir bei der Anmeldung minimale operative Informationen:",
+    "ul-b": "<li><strong>E-Mail-Adresse</strong> — wird ausschließlich zur Lizenzbindung, Servicekommunikation und Aktivierungsprüfung verwendet.</li><li><strong>Länderauswahl</strong> — wird erhoben, um Standardwährungsformate anzupassen und regionale Steuervorgaben einzuhalten.</li><li><strong>Rechnungsdaten</strong> — werden ausschließlich über unser sicheres Zahlungs-Gateway eines Drittanbieters verarbeitet. Blue Acid Labs speichert oder verarbeitet weder Ihre Kreditkartennummern noch rohe Bankdaten.</li>",
+    "h3-c": "C. Netzwerkverbindungsdaten",
+    "ul-c": "<li><strong>Aktuelle Wechselkurse</strong> — beim Starten des Währungsumrechnungsmoduls sendet die App eine sichere, nicht identifizierende API-Anfrage, um aktuelle Wechselkurse abzurufen. Mit dieser Anfrage werden keine personenbezogenen Daten oder browserbezogenen Metadaten übertragen.</li><li><strong>Lizenzprüfungen</strong> — eine einfache Online-Validierung bestätigt den Status Ihres Standardkontos.</li>",
+    "h3-d": "D. Diagnose &amp; Leistungsanalysen",
+    "p-d": "Um Stabilität zu gewährleisten, App-Abstürze zu beseitigen und die Leistung zu optimieren, erheben wir möglicherweise anonyme Gerätestatistiken:",
+    "ul-d": "<li>Betriebssystemversion (z. B. Android, iOS).</li><li>Gerätemodellkonfiguration.</li><li>Anonyme Diagnoseprotokolle und Absturzberichte.</li>",
+    "h2-03": "Menstruationszyklus- und gesundheitsbezogene Schätzungen",
+    "ul-health": "<li><strong>Nur informative Schätzungen:</strong> Die Berechnungen im Menstruationszyklus-Modul (einschließlich Vorhersagen der nächsten Periode, Eisprungprognosen und Schätzungen des fruchtbaren Fensters) werden über clientseitige Algorithmen ausschließlich auf Grundlage der von Ihnen eingegebenen Zykluslänge erstellt.</li><li><strong>Keine medizinische Verlässlichkeit:</strong> Dieses Modul dient ausschließlich der persönlichen Organisation und Information. Es sollte nicht als Verhütungsmethode, medizinische Diagnose oder Gesundheitsberatung betrachtet werden. Wenden Sie sich für alle medizinischen Anliegen an eine qualifizierte medizinische Fachperson.</li>",
+    "h2-04": "App-Berechtigungen und Systemzugriff",
+    "p-04": "Numora Calc fordert nach dem Prinzip der geringsten Rechtevergabe nur das absolute Mindestmaß an Systemberechtigungen an, das für den Betrieb erforderlich ist:",
+    "ul-permissions": "<li><strong>Netzwerkzugriff (INTERNET)</strong> — wird nur verwendet, um Wechselkurstabellen zu aktualisieren und aktive Standardlizenzen zu überprüfen.</li><li><strong>Lokaler, isolierter Speicher</strong> — liest und schreibt in der sicheren clientseitigen Datenbank auf Ihrem Gerät, um Notizen, Berechnungsverlauf und Voreinstellungen sicher aufzubewahren.</li><li><strong>Keine sensiblen Berechtigungen angefordert</strong> — die App fordert KEINEN Zugriff auf Standort, Kamera, Kontakte, SMS, Dateien oder Mikrofon an.</li>",
+    "h2-05": "Dienste Dritter",
+    "p-05": "Wir können hochverifizierte Standarddienste zur Unterstützung des Kernbetriebs einbinden. Diese Dienstleister können technische Kennzahlen gemäß ihren jeweiligen Datenschutzrichtlinien verarbeiten:",
+    "ul-thirdparty": "<li>Google Play-Dienste (für App-Vertrieb und Abrechnungsintegration)</li><li>Firebase / Google Analytics (für Absturzanalyse und Stabilitätsdiagnose)</li><li>Zahlungs-Gateways (zur Verwaltung sicherer Lizenzgebühren)</li>",
+    "h2-06": "Datenschutz für Kinder",
+    "p-06": "Numora Calc erhebt, erfragt oder richtet sich wissentlich nicht an personenbezogene Daten von Kindern unter 13 Jahren. Wenn Sie glauben, dass ein Minderjähriger bei uns ein E-Mail-Konto registriert hat, kontaktieren Sie uns bitte umgehend, damit wir den Kontoeintrag entfernen können.",
+    "h2-07": "Datenspeicherung, Sicherheit und Ihr Löschrecht",
+    "ul-security": "<li><strong>Datensicherheit:</strong> Wir setzen standardmäßige operative und logische Schutzmaßnahmen ein, um die Integrität verifizierter E-Mail-Registrierungen und Kontotransaktionen zu schützen.</li><li><strong>Sofortige Löschung auf Abruf (das Löschungsrecht):</strong> Wir respektieren Ihr Recht auf Datenlöschung nach den Richtlinien des Google Play Store, der DSGVO und des CCPA uneingeschränkt. Nutzer können alle gespeicherten Daten, individuellen Zyklusnotizen, Berechnungsverläufe sofort dauerhaft löschen und die Zuordnung der Systemlizenz aufheben, indem sie die Option „Alle gespeicherten Daten löschen“ im Bedienfeld der App-Nutzereinstellungen anklicken.</li>",
+    "h2-08": "Änderungen dieser Datenschutzerklärung",
+    "p-08": "Wir behalten uns das Recht vor, diese Datenschutzerklärung zu ändern, um möglichen Funktionsaktualisierungen Rechnung zu tragen. Sollten wir künftig Cloud-Synchronisierungsfunktionen einführen, werden wir diese Richtlinie aktualisieren und vorab Ihre ausdrückliche Zustimmung (Opt-in) innerhalb der App einholen.",
+    "h2-09": "Kontakt",
+    "p-09": "Wenn Sie Fragen oder Anmerkungen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns gerne:",
+    "ul-contact": "<li><strong>Firmenname:</strong> Blue Acid Labs</li><li><strong>Support-E-Mail:</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>Offizielle Website:</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. Alle Rechte vorbehalten.",
+    footer2: "Numora Calc Datenschutzerklärung — Gültig ab 6. Juli 2026"
+  },
+
+  fr: {
+    langLabel: "Langue",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "Politique de confidentialité",
+    effectiveDate: "Date d'entrée en vigueur : 6 juillet 2026",
+    intro: "Cette politique de confidentialité explique comment Blue Acid Labs collecte, utilise et protège les informations lorsque vous utilisez l'application mobile et web Numora Calc. Nous nous engageons à protéger la vie privée des utilisateurs et à garantir un traitement transparent de toutes les données locales et de compte.",
+    tocLabel: "Sur cette page",
+    toc1: "Aperçu des fonctions de l'application",
+    toc2: "Informations que nous collectons et comment nous les traitons",
+    toc3: "Estimations relatives au cycle menstruel et à la santé",
+    toc4: "Autorisations de l'application et accès au système",
+    toc5: "Services tiers",
+    toc6: "Confidentialité des enfants",
+    toc7: "Stockage des données, sécurité et droits de suppression",
+    toc8: "Modifications de cette politique de confidentialité",
+    toc9: "Nous contacter",
+    "h2-01": "Aperçu des fonctions de l'application",
+    "p-01": "Numora Calc est une boîte à outils multifonctionnelle offrant des calculatrices standard, des modules de calcul spécialisés (dont un calculateur d'âge, un convertisseur d'unités et des calculateurs de remise), des outils de conversion de devises en temps réel, un gestionnaire de notes local (Sticky Logs), ainsi que des outils de suivi et de prévision du cycle menstruel.",
+    "h2-02": "Informations que nous collectons et comment nous les traitons",
+    "p-02": "Pour prendre en charge ces fonctionnalités, Numora Calc est conçu pour fonctionner principalement hors ligne, en utilisant un stockage local isolé (sandboxed) sur votre appareil. Nous privilégions la minimisation des données et n'exécutons ni scripts de suivi continu ni télémétrie en arrière-plan.",
+    "h3-a": "A. Contenu créé par l'utilisateur et calculs des outils (stockés uniquement en local)",
+    "p-a": "Les utilisateurs peuvent saisir volontairement des données dans nos modules de calcul spécialisés, notamment :",
+    "ul-a": "<li>Saisies numériques, équations, dates de naissance et pourcentages de remise.</li><li>Notes textuelles personnalisées, entrées de bloc-notes (Sticky Pad) et journaux de calculs.</li><li>Paramètres de suivi du cycle menstruel et de la santé : dates de début des dernières règles, longueurs de cycle, durées des règles et journaux de cycle personnalisés.</li>",
+    "callout-a": "<strong>Engagement de stockage :</strong> toutes les saisies de calcul, notes et paramètres de cycle sont enregistrés exclusivement sur votre appareil, au sein de l'environnement isolé de l'application (stockage local côté client). Ces informations sensibles ne sont jamais synchronisées automatiquement avec des serveurs externes, ni vendues, ni partagées avec des tiers par Blue Acid Labs.",
+    "h3-b": "B. Données d'enregistrement et de vérification de licence (informations de compte)",
+    "p-b": "Pour accéder à votre licence de plateforme standard perpétuelle et la vérifier, nous collectons un minimum d'informations opérationnelles lors de l'inscription :",
+    "ul-b": "<li><strong>Adresse e-mail</strong> — utilisée uniquement pour l'association de licence, la communication de service et les vérifications d'activation.</li><li><strong>Sélection du pays</strong> — recueillie pour adapter les formats de devise par défaut et respecter les réglementations fiscales régionales.</li><li><strong>Coordonnées de facturation</strong> — traitées exclusivement par notre passerelle de paiement tierce sécurisée. Blue Acid Labs ne stocke ni ne traite vos numéros de carte bancaire ou vos identifiants bancaires bruts.</li>",
+    "h3-c": "C. Données de connexion réseau",
+    "ul-c": "<li><strong>Taux de change en temps réel</strong> — lorsque vous lancez le module de conversion de devises, l'application envoie une requête API sécurisée et non identifiante afin de récupérer les taux de change en temps réel. Aucune information personnelle ni métadonnée identifiant le navigateur n'est transmise avec cette requête.</li><li><strong>Vérifications de licence</strong> — une simple validation en ligne confirme le statut de votre compte standard.</li>",
+    "h3-d": "D. Diagnostics et analyses de performance",
+    "p-d": "Afin de garantir la stabilité, d'éliminer les plantages de l'application et d'optimiser les performances, nous pouvons recueillir des statistiques anonymes sur l'appareil :",
+    "ul-d": "<li>Version du système d'exploitation (par exemple, Android, iOS).</li><li>Configuration du modèle d'appareil.</li><li>Journaux de diagnostic anonymes et rapports de plantage.</li>",
+    "h2-03": "Estimations relatives au cycle menstruel et à la santé",
+    "ul-health": "<li><strong>Estimations à titre informatif uniquement :</strong> les calculs du module de cycle menstruel (y compris les prévisions des prochaines règles, les prédictions d'ovulation et les estimations de la fenêtre de fertilité) sont générés via des algorithmes côté client, fondés uniquement sur la longueur de cycle saisie par l'utilisateur.</li><li><strong>Aucune fiabilité médicale :</strong> ce module est fourni uniquement à des fins d'organisation personnelle et d'information. Il ne doit pas être considéré comme un moyen de contraception, un diagnostic médical ou un avis de santé. Consultez un professionnel de santé qualifié pour tout besoin médical.</li>",
+    "h2-04": "Autorisations de l'application et accès au système",
+    "p-04": "Numora Calc demande le strict minimum d'autorisations système nécessaires à son fonctionnement, conformément au principe du moindre privilège :",
+    "ul-permissions": "<li><strong>Accès réseau (INTERNET)</strong> — utilisé uniquement pour mettre à jour les tables de taux de change et vérifier les licences standard actives.</li><li><strong>Stockage local isolé</strong> — lit et écrit dans la base de données sécurisée côté client sur votre appareil afin de préserver en sécurité les notes, l'historique de calcul et les préréglages.</li><li><strong>Aucune autorisation sensible demandée</strong> — l'application ne demande PAS l'accès à votre localisation, à l'appareil photo, aux contacts, aux SMS, aux fichiers ou au microphone.</li>",
+    "h2-05": "Services tiers",
+    "p-05": "Nous pouvons intégrer des services standards hautement vérifiés pour faciliter les opérations essentielles. Ces sous-traitants peuvent traiter des indicateurs techniques conformément à leurs propres politiques de confidentialité respectives :",
+    "ul-thirdparty": "<li>Google Play Services (pour la distribution de l'application et l'intégration de la facturation)</li><li>Firebase / Google Analytics (pour l'analyse des plantages et le diagnostic de stabilité)</li><li>Passerelles de paiement (pour la gestion sécurisée des frais de licence)</li>",
+    "h2-06": "Confidentialité des enfants",
+    "p-06": "Numora Calc ne collecte, ne sollicite ni ne cible sciemment des informations personnelles auprès d'enfants de moins de 13 ans. Si vous pensez qu'un mineur a créé un compte e-mail chez nous, veuillez nous contacter immédiatement afin que nous puissions supprimer l'enregistrement du compte.",
+    "h2-07": "Stockage des données, sécurité et vos droits de suppression",
+    "ul-security": "<li><strong>Sécurité des données :</strong> nous mettons en œuvre des mesures de protection opérationnelles et logiques standard afin de préserver l'intégrité des inscriptions par e-mail vérifiées et des transactions de compte.</li><li><strong>Suppression instantanée à la demande (droit de purge) :</strong> nous respectons pleinement votre droit à l'effacement des données conformément à la politique du Google Play Store, au RGPD et au CCPA. Les utilisateurs peuvent supprimer définitivement et instantanément toutes les données stockées, les notes de cycle personnalisées, les historiques de calcul, et effacer les associations de licence du système, en cliquant sur l'option « Supprimer toutes les données stockées » dans le panneau des paramètres utilisateur de l'application.</li>",
+    "h2-08": "Modifications de cette politique de confidentialité",
+    "p-08": "Nous nous réservons le droit de modifier cette politique de confidentialité afin de refléter d'éventuelles mises à jour de fonctionnalités. Si nous introduisons à l'avenir des fonctionnalités de synchronisation dans le cloud, nous mettrons à jour cette politique et solliciterons au préalable votre consentement explicite (opt-in) au sein de l'application.",
+    "h2-09": "Nous contacter",
+    "p-09": "Si vous avez des questions ou des commentaires concernant cette politique de confidentialité, n'hésitez pas à nous contacter :",
+    "ul-contact": "<li><strong>Nom de l'entreprise :</strong> Blue Acid Labs</li><li><strong>E-mail du support :</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>Site officiel :</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. Tous droits réservés.",
+    footer2: "Politique de confidentialité de Numora Calc — En vigueur depuis le 6 juillet 2026"
+  },
+
+  it: {
+    langLabel: "Lingua",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "Informativa sulla privacy",
+    effectiveDate: "Data di entrata in vigore: 6 luglio 2026",
+    intro: "La presente Informativa sulla privacy spiega come Blue Acid Labs raccoglie, utilizza e protegge le informazioni quando utilizzi l'applicazione mobile e web Numora Calc. Ci impegniamo a proteggere la privacy degli utenti e a garantire una gestione trasparente di tutti i dati locali e dell'account.",
+    tocLabel: "In questa pagina",
+    toc1: "Panoramica delle funzioni dell'applicazione",
+    toc2: "Informazioni raccolte e relative modalità di gestione",
+    toc3: "Stime relative al ciclo mestruale e alla salute",
+    toc4: "Autorizzazioni dell'app e accesso al sistema",
+    toc5: "Servizi di terze parti",
+    toc6: "Privacy dei minori",
+    toc7: "Conservazione dei dati, sicurezza e diritti di cancellazione",
+    toc8: "Modifiche alla presente Informativa sulla privacy",
+    toc9: "Contattaci",
+    "h2-01": "Panoramica delle funzioni dell'applicazione",
+    "p-01": "Numora Calc è un toolkit multifunzionale che offre calcolatrici standard, moduli di calcolo specializzati (tra cui calcolatore dell'età, convertitore di unità e calcolatori di sconto), strumenti di conversione valutaria in tempo reale, un gestore di note locale (Sticky Logs) e strumenti di monitoraggio e previsione del ciclo mestruale.",
+    "h2-02": "Informazioni raccolte e relative modalità di gestione",
+    "p-02": "Per supportare queste funzionalità, Numora Calc è progettata per funzionare prevalentemente offline, utilizzando un archivio locale isolato (sandboxed) sul tuo dispositivo. Diamo priorità alla minimizzazione dei dati e non eseguiamo script di tracciamento continuo né telemetria in background.",
+    "h3-a": "A. Contenuti creati dall'utente e calcoli degli strumenti (memorizzati solo localmente)",
+    "p-a": "Gli utenti possono inserire volontariamente dati nei nostri moduli di calcolo specializzati, tra cui:",
+    "ul-a": "<li>Valori numerici, equazioni, date di nascita e percentuali di sconto.</li><li>Note testuali personalizzate, voci del blocco note (Sticky Pad) e registri dei calcoli.</li><li>Parametri di monitoraggio del ciclo mestruale e della salute: data di inizio dell'ultimo ciclo, durata del ciclo, durata delle mestruazioni e registri personalizzati del ciclo.</li>",
+    "callout-a": "<strong>Impegno sulla conservazione:</strong> tutti gli input di calcolo, le note e i parametri del ciclo vengono salvati esclusivamente sul tuo dispositivo, all'interno dell'ambiente isolato dell'app (archiviazione locale lato client). Queste informazioni sensibili non vengono mai sincronizzate automaticamente con server esterni, né vendute o condivise con terze parti da Blue Acid Labs.",
+    "h3-b": "B. Dati di registrazione e verifica della licenza (informazioni sull'account)",
+    "p-b": "Per accedere e verificare la tua licenza standard perpetua della piattaforma, raccogliamo informazioni operative minime al momento della registrazione:",
+    "ul-b": "<li><strong>Indirizzo e-mail</strong> — utilizzato esclusivamente per l'associazione della licenza, le comunicazioni di servizio e le verifiche di attivazione.</li><li><strong>Selezione del Paese</strong> — raccolta per adattare i formati valutari predefiniti e rispettare le linee guida fiscali regionali.</li><li><strong>Dati di fatturazione</strong> — gestiti esclusivamente dal nostro gateway di pagamento di terze parti sicuro. Blue Acid Labs non memorizza né elabora i numeri della tua carta di credito o le credenziali bancarie grezze.</li>",
+    "h3-c": "C. Dati di connessione di rete",
+    "ul-c": "<li><strong>Tassi di cambio in tempo reale</strong> — quando avvii il modulo Convertitore di valuta, l'app invia una richiesta API sicura e non identificativa per recuperare i tassi di cambio in tempo reale. Con questa richiesta non vengono trasmesse informazioni personali né metadati identificativi del browser.</li><li><strong>Verifiche della licenza</strong> — una semplice convalida online che verifica lo stato del tuo account standard.</li>",
+    "h3-d": "D. Diagnostica e analisi delle prestazioni",
+    "p-d": "Per garantire la stabilità, eliminare gli arresti anomali dell'app e ottimizzare le prestazioni, potremmo raccogliere statistiche anonime sul dispositivo:",
+    "ul-d": "<li>Versione del sistema operativo (ad es. Android, iOS).</li><li>Configurazione del modello del dispositivo.</li><li>Registri diagnostici anonimi e rapporti sugli arresti anomali.</li>",
+    "h2-03": "Stime relative al ciclo mestruale e alla salute",
+    "ul-health": "<li><strong>Solo stime informative:</strong> i calcoli nel modulo del ciclo mestruale (comprese le previsioni del prossimo ciclo, le previsioni dell'ovulazione e le stime della finestra fertile) vengono generati tramite algoritmi lato client, basati esclusivamente sulla durata del ciclo inserita dall'utente.</li><li><strong>Nessuna affidabilità medica:</strong> questo modulo è fornito esclusivamente a scopo di organizzazione personale e informazione. Non deve essere considerato un metodo contraccettivo, una diagnosi medica o un consiglio sanitario. Per qualsiasi esigenza medica, consulta un professionista sanitario qualificato.</li>",
+    "h2-04": "Autorizzazioni dell'app e accesso al sistema",
+    "p-04": "Numora Calc richiede il minimo indispensabile di autorizzazioni di sistema necessarie per funzionare, seguendo il principio del privilegio minimo:",
+    "ul-permissions": "<li><strong>Accesso alla rete (INTERNET)</strong> — utilizzato solo per aggiornare le tabelle dei tassi di cambio e verificare le licenze standard attive.</li><li><strong>Archiviazione locale isolata</strong> — legge e scrive nel database sicuro lato client sul tuo dispositivo per mantenere al sicuro note, cronologia dei calcoli e preimpostazioni.</li><li><strong>Nessuna autorizzazione sensibile richiesta</strong> — l'applicazione NON richiede l'accesso a posizione, fotocamera, contatti, SMS, file o microfono.</li>",
+    "h2-05": "Servizi di terze parti",
+    "p-05": "Potremmo integrare servizi standard altamente verificati per facilitare le operazioni principali. Questi soggetti terzi possono elaborare metriche tecniche in conformità con le rispettive informative sulla privacy:",
+    "ul-thirdparty": "<li>Google Play Services (per la distribuzione dell'app e l'integrazione della fatturazione)</li><li>Firebase / Google Analytics (per l'analisi degli arresti anomali e la diagnostica di stabilità)</li><li>Gateway di pagamento (per la gestione sicura dei costi di licenza)</li>",
+    "h2-06": "Privacy dei minori",
+    "p-06": "Numora Calc non raccoglie, richiede o indirizza consapevolmente informazioni personali da minori di 13 anni. Se ritieni che un minore abbia registrato un account e-mail presso di noi, contattaci immediatamente affinché possiamo rimuovere la registrazione dell'account.",
+    "h2-07": "Conservazione dei dati, sicurezza e i tuoi diritti di cancellazione",
+    "ul-security": "<li><strong>Sicurezza dei dati:</strong> implementiamo misure di protezione operative e logiche standard per proteggere l'integrità delle registrazioni e-mail verificate e delle transazioni dell'account.</li><li><strong>Cancellazione istantanea su richiesta (diritto di eliminazione):</strong> rispettiamo pienamente il tuo diritto alla cancellazione dei dati ai sensi delle policy del Google Play Store, del GDPR e del CCPA. Gli utenti possono eliminare in modo permanente e istantaneo tutti i dati memorizzati, le note personalizzate del ciclo, la cronologia dei calcoli e cancellare le associazioni di licenza di sistema facendo clic sull'opzione \"Elimina tutti i dati memorizzati\" nel pannello Impostazioni utente dell'app.</li>",
+    "h2-08": "Modifiche alla presente Informativa sulla privacy",
+    "p-08": "Ci riserviamo il diritto di modificare la presente Informativa sulla privacy in base a eventuali aggiornamenti delle funzionalità. Se in futuro introdurremo funzionalità di sincronizzazione cloud, aggiorneremo questa informativa e richiederemo preventivamente il tuo consenso esplicito (opt-in) all'interno dell'app.",
+    "h2-09": "Contattaci",
+    "p-09": "Se hai domande o commenti su questa Informativa sulla privacy, non esitare a contattarci:",
+    "ul-contact": "<li><strong>Nome dell'azienda:</strong> Blue Acid Labs</li><li><strong>E-mail di supporto:</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>Sito ufficiale:</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. Tutti i diritti riservati.",
+    footer2: "Informativa sulla privacy di Numora Calc — In vigore dal 6 luglio 2026"
+  },
+
+  es: {
+    langLabel: "Idioma",
+    eyebrow: "Numora Calc · Blue Acid Labs",
+    h1: "Política de privacidad",
+    effectiveDate: "Fecha de entrada en vigor: 6 de julio de 2026",
+    intro: "Esta Política de privacidad explica cómo Blue Acid Labs recopila, utiliza y protege la información cuando usas la aplicación móvil y web Numora Calc. Estamos comprometidos con la protección de la privacidad del usuario y con garantizar un manejo transparente de todos los datos locales y de la cuenta.",
+    tocLabel: "En esta página",
+    toc1: "Descripción general de las funciones de la aplicación",
+    toc2: "Información que recopilamos y cómo la gestionamos",
+    toc3: "Estimaciones relacionadas con el ciclo menstrual y la salud",
+    toc4: "Permisos de la aplicación y acceso al sistema",
+    toc5: "Servicios de terceros",
+    toc6: "Privacidad de los menores",
+    toc7: "Almacenamiento de datos, seguridad y derechos de eliminación",
+    toc8: "Cambios a esta Política de privacidad",
+    toc9: "Contáctanos",
+    "h2-01": "Descripción general de las funciones de la aplicación",
+    "p-01": "Numora Calc es un kit de herramientas multifuncional que ofrece calculadoras estándar, módulos de cálculo especializados (incluida una calculadora de edad, un convertidor de unidades y calculadoras de descuento), herramientas de conversión de divisas en tiempo real, un gestor de notas local (Sticky Logs) y herramientas de seguimiento y predicción del ciclo menstrual.",
+    "h2-02": "Información que recopilamos y cómo la gestionamos",
+    "p-02": "Para dar soporte a estas funciones, Numora Calc está diseñada para funcionar principalmente sin conexión, utilizando un almacenamiento local aislado (sandboxed) en tu dispositivo. Priorizamos la minimización de datos y no ejecutamos scripts de seguimiento continuo ni telemetría en segundo plano.",
+    "h3-a": "A. Contenido creado por el usuario y cálculos de las herramientas (almacenados solo localmente)",
+    "p-a": "Los usuarios pueden introducir datos voluntariamente en nuestros módulos de cálculo especializados, entre ellos:",
+    "ul-a": "<li>Entradas numéricas, ecuaciones, fechas de nacimiento y porcentajes de descuento.</li><li>Notas de texto personalizadas, entradas del bloc de notas adhesivas y registros de cálculos.</li><li>Parámetros de seguimiento del ciclo menstrual y la salud: fechas de inicio del último período, duración del ciclo, duración del período y registros de ciclo personalizados.</li>",
+    "callout-a": "<strong>Compromiso de almacenamiento:</strong> todas las entradas de cálculo, notas y parámetros de ciclo se guardan exclusivamente en tu dispositivo, dentro del entorno aislado de la aplicación (almacenamiento local del lado del cliente). Esta información sensible nunca se sincroniza automáticamente con servidores externos, ni es vendida ni compartida con terceros por Blue Acid Labs.",
+    "h3-b": "B. Datos de registro y verificación de licencia (información de la cuenta)",
+    "p-b": "Para acceder y verificar tu licencia estándar perpetua de la plataforma, recopilamos información operativa mínima durante el registro:",
+    "ul-b": "<li><strong>Dirección de correo electrónico</strong> — se utiliza únicamente para la vinculación de la licencia, la comunicación del servicio y las verificaciones de activación.</li><li><strong>Selección de país</strong> — se recopila para adaptar los formatos de moneda predeterminados y cumplir con las normativas fiscales regionales.</li><li><strong>Datos de facturación</strong> — gestionados exclusivamente por nuestra pasarela de pago segura de terceros. Blue Acid Labs no almacena ni procesa los números de tu tarjeta de crédito ni tus credenciales bancarias sin procesar.</li>",
+    "h3-c": "C. Datos de conexión de red",
+    "ul-c": "<li><strong>Tipos de cambio en tiempo real</strong> — al iniciar el módulo Conversor de divisas, la aplicación envía una solicitud de API segura y no identificativa para obtener los tipos de cambio en tiempo real. Con esta solicitud no se transmite información personal ni metadatos que identifiquen el navegador.</li><li><strong>Verificaciones de licencia</strong> — una sencilla validación en línea que confirma el estado de tu cuenta estándar.</li>",
+    "h3-d": "D. Diagnóstico y análisis de rendimiento",
+    "p-d": "Para garantizar la estabilidad, eliminar los bloqueos de la aplicación y ofrecer optimizaciones de rendimiento, podemos recopilar estadísticas anónimas del dispositivo:",
+    "ul-d": "<li>Versión del sistema operativo (por ejemplo, Android, iOS).</li><li>Configuración del modelo del dispositivo.</li><li>Registros de diagnóstico anónimos e informes de errores.</li>",
+    "h2-03": "Estimaciones relacionadas con el ciclo menstrual y la salud",
+    "ul-health": "<li><strong>Solo estimaciones informativas:</strong> los cálculos del módulo de ciclo menstrual (incluidas las previsiones del próximo período, las predicciones de ovulación y las estimaciones de la ventana fértil) se generan mediante algoritmos del lado del cliente, basados únicamente en la duración del ciclo introducida por el usuario.</li><li><strong>Sin validez médica:</strong> este módulo se proporciona únicamente con fines de organización personal e información. No debe considerarse un método anticonceptivo, un diagnóstico médico ni un consejo sanitario. Consulta a un profesional médico cualificado para cualquier necesidad médica.</li>",
+    "h2-04": "Permisos de la aplicación y acceso al sistema",
+    "p-04": "Numora Calc solicita el mínimo absoluto de permisos del sistema necesarios para funcionar, siguiendo el principio de mínimo privilegio:",
+    "ul-permissions": "<li><strong>Acceso a la red (INTERNET)</strong> — se utiliza únicamente para actualizar las tablas de tipos de cambio y verificar las licencias estándar activas.</li><li><strong>Almacenamiento local aislado</strong> — lee y escribe en la base de datos segura del lado del cliente en tu dispositivo para mantener a salvo las notas, el historial de cálculos y los ajustes preestablecidos.</li><li><strong>No se solicitan permisos sensibles</strong> — la aplicación NO solicita acceso a tu ubicación, cámara, contactos, SMS, archivos ni micrófono.</li>",
+    "h2-05": "Servicios de terceros",
+    "p-05": "Podemos integrar servicios estándar altamente verificados para facilitar las operaciones principales. Estos proveedores pueden procesar métricas técnicas de acuerdo con sus respectivas políticas de privacidad:",
+    "ul-thirdparty": "<li>Servicios de Google Play (para la distribución de la aplicación y la integración de facturación)</li><li>Firebase / Google Analytics (para análisis de fallos y diagnóstico de estabilidad)</li><li>Pasarelas de pago (para gestionar los cargos de licencia de forma segura)</li>",
+    "h2-06": "Privacidad de los menores",
+    "p-06": "Numora Calc no recopila, solicita ni dirige a sabiendas información personal de menores de 13 años. Si crees que un menor ha registrado una cuenta de correo electrónico con nosotros, contáctanos de inmediato para que podamos eliminar el registro de la cuenta.",
+    "h2-07": "Almacenamiento de datos, seguridad y tus derechos de eliminación",
+    "ul-security": "<li><strong>Seguridad de los datos:</strong> implementamos salvaguardas operativas y lógicas estándar para proteger la integridad de los registros de correo electrónico verificados y las transacciones de la cuenta.</li><li><strong>Eliminación instantánea a petición (el derecho de purga):</strong> respetamos plenamente tu derecho a la supresión de datos conforme a la política de Google Play Store, el RGPD y la CCPA. Los usuarios pueden eliminar de forma permanente e instantánea todos los datos almacenados, las notas de ciclo personalizadas, los historiales de cálculo y borrar las asociaciones de licencia del sistema haciendo clic en la opción \"Eliminar todos los datos almacenados\" dentro del panel de Configuración de usuario de la aplicación.</li>",
+    "h2-08": "Cambios a esta Política de privacidad",
+    "p-08": "Nos reservamos el derecho de modificar esta Política de privacidad para reflejar posibles actualizaciones de funciones. Si en el futuro introducimos funciones de sincronización en la nube, actualizaremos esta política y solicitaremos tu confirmación explícita de aceptación (opt-in) dentro de la aplicación con antelación.",
+    "h2-09": "Contáctanos",
+    "p-09": "Si tienes alguna pregunta o comentario sobre esta Política de privacidad, no dudes en ponerte en contacto con nosotros:",
+    "ul-contact": "<li><strong>Nombre de la empresa:</strong> Blue Acid Labs</li><li><strong>Correo de soporte:</strong> <a href=\"mailto:blue.acid.labs@gmail.com\">blue.acid.labs@gmail.com</a></li><li><strong>Sitio web oficial:</strong> <a href=\"https://numoracalc.com\">https://numoracalc.com</a></li>",
+    footer1: "© 2026 Blue Acid Labs. Todos los derechos reservados.",
+    footer2: "Política de privacidad de Numora Calc — Vigente desde el 6 de julio de 2026"
+  }
+};
+
+(function(){
+  const RTL_LANGS = ['ar'];
+  const select = document.getElementById('lang-select');
+
+  function applyLanguage(lang){
+    const dict = I18N[lang] || I18N.en;
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL_LANGS.indexOf(lang) !== -1 ? 'rtl' : 'ltr';
+
+    try { localStorage.setItem('numora-lang', lang); } catch(e) {}
+  }
+
+  let initial = 'en';
+  try {
+    const saved = localStorage.getItem('numora-lang');
+    if (saved && I18N[saved]) initial = saved;
+  } catch(e) {}
+
+  select.value = initial;
+  applyLanguage(initial);
+
+  select.addEventListener('change', function(){
+    applyLanguage(this.value);
+  });
+})();
+</script>
 </body>
 </html>
